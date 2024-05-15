@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcgqopqt78top"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_r6qw6"]
+[ext_resource type="PackedScene" uid="uid://d2dlelvbcqpkc" path="res://player.tscn" id="1_vxn5y"]
+[ext_resource type="PackedScene" uid="uid://tre810bt1hai" path="res://enemy.tscn" id="2_r63a7"]
+[ext_resource type="PackedScene" uid="uid://d2xonwyjfbp5v" path="res://walls.tscn" id="3_ovdc5"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r6qw6")
+
+[node name="Player" parent="." instance=ExtResource("1_vxn5y")]
+position = Vector2(559, 613)
+motion_mode = 1
+
+[node name="Enemy" parent="." instance=ExtResource("2_r63a7")]
+position = Vector2(558, 219)
+health = 10000
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(558, 219)
+scale = Vector2(16.4568, 16.2775)
+
+[node name="Walls" parent="." instance=ExtResource("3_ovdc5")]
+position = Vector2(-377, 218)
+scale = Vector2(2.58241, 6.28826)
+
+[node name="Walls2" parent="." instance=ExtResource("3_ovdc5")]
+position = Vector2(1493, 218)
+scale = Vector2(-2.48373, 6.25948)
+
+[node name="Walls3" parent="." instance=ExtResource("3_ovdc5")]
+position = Vector2(547, 731)
+scale = Vector2(99.965, 0.29927)
+
+[node name="Walls4" parent="." instance=ExtResource("3_ovdc5")]
+position = Vector2(566, -300)
+scale = Vector2(102.565, 0.308194)
+
+[connection signal="swing" from="Player" to="." method="_on_player_swing"]

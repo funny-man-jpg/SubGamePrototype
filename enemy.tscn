@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://tre810bt1hai"]
+
+[ext_resource type="Texture2D" uid="uid://qcncg55kkvmf" path="res://assets/Enemy.png" id="1_8tvh8"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_cgsal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj4nw"]
+
+[node name="Enemy" type="StaticBody2D"]
+scale = Vector2(16.4568, 16.2775)
+script = ExtResource("1_cgsal")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 3.57628e-07)
+scale = Vector2(0.13245, 0.133333)
+texture = ExtResource("1_8tvh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pj4nw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1.5799
+offset_top = -14.3142
+offset_right = 25.4201
+offset_bottom = 8.68576
+scale = Vector2(0.132037, 0.188983)
